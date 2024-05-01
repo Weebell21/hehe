@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <!-- Link đến Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <form id="myForm">
+        <div class="row mb-3">
+          <div class="col">
+            <input name="mau-{stt}" type="text" class="form-control" placeholder="Input 1">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Input 2">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Input 3">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Input 4">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="addInput()">Thêm Ô</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Link đến thư viện JavaScript của Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script JavaScript để thêm ô input -->
+<script>
+  function addInput() {
+    var newRow = document.createElement("div");
+    newRow.className = "row mb-3";
+    newRow.innerHTML = `
+      <div class="col">
+        <input type="text" class="form-control" placeholder="New Input">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="New Input">
+      </div>
+    `;
+    document.getElementById("myForm").insertBefore(newRow, document.getElementById("myForm").lastElementChild);
+  }
+</script>
+
+</body>
+</html>
